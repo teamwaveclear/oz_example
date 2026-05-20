@@ -1,5 +1,5 @@
 # RAG Assistant (Flask)
-Alexk
+Alexk, Ramat Gan, 88391839
 A Flask web application that wraps the original `rag_example.py` RAG pipeline
 in a modern chat UI with per-session conversation memory.
 
