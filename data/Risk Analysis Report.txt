@@ -1,0 +1,190 @@
+Risk Analysis Report 
+Version 1.0 – Effective 19 June 2025 
+Applies to: Energuard by Argen Energy – Generation, Transmission & Distribution 
+environments 
+Owner: Chief Risk Officer (CRO) 
+1 Purpose and Scope 
+This report identifies, evaluates and prioritises risks that could jeopardise the 
+confidentiality, integrity and availability of energy-grid operations. It is prepared in 
+fulfilment of NIS2 Directive, Article 21 (2)(a–h) obligations to implement a 
+"comprehensive risk analysis" for essential entities. 
+The assessment covers: 
+Category 
+Operational Technology 
+(OT) 
+Information Technology 
+(IT) 
+Cloud & Third-party 
+People & Processes 
+Physical Sites 
+Included Assets / Operations 
+SCADA masters, PLCs, IEDs, RTUs, substation 
+LANs 
+Corporate servers, databases, endpoints, SaaS 
+IaaS platforms, data-analytics pipelines, MSP access 
+Key personnel, vendor contractors, change
+management 
+Control centres, substations, data halls 
+2 Document Relevance 
+This document is exclusively a Risk Analysis Report and does not prescribe controls; 
+mitigation actions are tracked in the accompanying Risk Treatment Plan (see § 4). 
+3 Risk Identification 
+# Risk Description 
+R
+01 
+R
+02 
+Malware infection 
+of SCADA 
+servers leading to 
+loss of visibility 
+Exploitation of 
+VPN gateway 
+Source / 
+Threat Actor 
+Sophisticated 
+external 
+attacker 
+Criminal 
+group 
+Affected 
+Assets 
+OT DMZ 
+servers, 
+historian DB 
+Corporate 
+Likelihood¹ Impact² Risk 
+Level³ 
+Medium High High 
+AD, remote- Low 
+Critical High 
+This document was generated using EnerGuard™ by ArgenEnergy 
+# Risk Description 
+Source / 
+Threat Actor 
+R
+03 
+zero-day enabling 
+lateral movement 
+Mis-configured 
+firewall rules 
+exposing 
+Modbus/TCP to 
+Internet 
+Affected 
+Assets 
+access 
+network 
+Internal error Field PLCs, 
+RTUs 
+R
+04 
+R
+05 
+Insider theft of 
+engineering 
+drawings and 
+substation configs 
+Flood at primary 
+data centre 
+causing hardware 
+failure 
+Disgruntled 
+employee 
+Natural hazard 
+SharePoint, 
+Git repo 
+SCADA 
+master, 
+storage SAN 
+Likelihood¹ Impact² Risk 
+Level³ 
+High 
+High 
+High 
+Medium Medium Medium 
+Low 
+Critical High 
+¹ Likelihood definitions: High > 60 % in one year, Medium 20–60 %, Low < 20 %. 
+² Impact definitions: Critical = ≥12 h outage or legal breach; High = 4–12 h outage; 
+Medium = ≤4 h outage or minor financial loss. 
+³ Risk Level = Likelihood × Impact using the corporate 3×3 matrix. 
+4 Risk Treatment Plan 
+Risk 
+ID 
+R-01 
+R-02 
+R-03 
+R-04 
+R-05 
+Treatment Strategy 
+• Segregate SCADA DMZ with 
+layer-7 filters• Deploy EDR on 
+OT servers 
+• Patch VPN firmware within 24 
+h of vendor release• Enforce 
+MFA for all external access 
+• Implement automated rule
+review scripts• Add Modbus IDS 
+signatures 
+• Apply DLP on engineering 
+repositories• Introduce least
+privilege RBAC 
+• Establish warm-standby site 
+200 km away• Replicate critical 
+VMs hourly 
+Responsible 
+Owner 
+OT Security 
+Lead 
+Network 
+Operations 
+Manager 
+Firewall Team 
+Lead 
+HR & IT 
+Compliance 
+Facilities 
+Director 
+Current 
+Status 
+In progress 
+(40 %) 
+Open 
+Mitigated 
+Planned 
+Open (budget 
+approved) 
+Deadline 
+30 Sep 
+2025 
+15 Aug 
+2025 
+31 May 
+2025 
+01 Oct 
+2025 
+31 Dec 
+2025 
+Residual risk is recalculated after each mitigation milestone and reported quarterly to 
+the Security Steering Committee. 
+This document was generated using EnerGuard™ by ArgenEnergy 
+5 Conclusion and Recommendations 
+The assessment identified five High-level risks—three cyber and two physical—that 
+could disrupt electricity delivery or violate regulatory obligations. Immediate focus 
+should be on: 
+1. Hardening remote-access paths (VPN zero-day exposure, R-02). 
+2. Closing unnecessary field-device ports to prevent external Modbus 
+reachability (R-03). 
+3. Accelerating the warm-standby data-centre build to mitigate single-site 
+dependency (R-05). 
+Full execution of the treatment plan will lower the overall residual risk profile from 
+High to Medium and align the organisation with NIS2 Article 21 expectations for 
+"appropriate and proportionate technical and organisational measures." 
+Appendix A – Methodology 
+The analysis follows ISO 27005:2022 risk steps: context establishment → 
+identification → analysis → evaluation → treatment → monitoring. 
+Appendix B – Review Schedule 
+This report is reviewed annually or after any major system change or incident with 
+CVSS ≥ 8 impact. 
+End of Risk Analysis Report – Version 1.0
